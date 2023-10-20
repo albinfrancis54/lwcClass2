@@ -1,0 +1,18 @@
+<template>
+    <template if:true={show}>
+        <lightning-card title="Example -1">
+            <lightning-input type="text" label="Enter Name" value={name} onchange={namehandler}></lightning-input>
+            <lightning-input type="number" label="Enter Age" value={age} onchange={agehandler}></lightning-input>
+            <lightning-input type="text" label="Enter Title" value={title} onchange={titlehandler}></lightning-input>
+            <lightning-button label="Save" onclick={savehandler}></lightning-button>
+        </lightning-card>
+    </template>
+    <template if:false ={show}>
+        <lightning-card icon-name="standard:account" variant="base" title="Result">
+          <p>Employee Name: {name}</p>
+          <p>Employee Age: {age}</p>
+          <p>Employee Title: {title}</p>
+        <lightning-button variant="brand" label="Try again" onclick={tryhandler}></lightning-button>  
+        </lightning-card>  
+    </template>
+</template>
